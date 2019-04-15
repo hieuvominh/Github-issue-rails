@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gitissue.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @gitissue.content %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @gitissue.link %>
+</p>
+
+<%= link_to 'Edit', edit_gitissue_path(@gitissue) %> |
+<%= link_to 'Back', gitissues_path %>

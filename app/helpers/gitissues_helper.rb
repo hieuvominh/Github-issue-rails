@@ -1,0 +1,2 @@
+module GitissuesHelper
+end
