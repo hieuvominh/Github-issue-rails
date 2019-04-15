@@ -43,6 +43,10 @@ class Git extends React.Component {
       this.forceUpdateHandler();
     }
 
+    componentDidMount(){
+        this.filter('open');
+    }
+    
     change(){
       this.setState({value: event.target.value});
       this.filter(event.target.value);
@@ -63,6 +67,7 @@ class Git extends React.Component {
           modal.style.display = "none";
         }
       }
+      
       let _git = this.state.gitissue;
       
       return (
@@ -97,10 +102,15 @@ class Git extends React.Component {
                     <td>
                       <span><p className="font-for-details">{git.created_at}</p></span>
                     </td>
-                </tr>
-                <div className="border"></div>
+                </tr> 
             </tbody>
-            
+            <tfoot >
+              <div className="border"></div>
+            </tfoot>
+          </table>
+        )
+      })}
+       
             <div id="myModal" className="modal">
               <div className="modal-content">
                 <span onClick={this.closeModal} className="close">&times;</span>
@@ -117,9 +127,6 @@ class Git extends React.Component {
                 <p><b>Author association</b>: {this.props.gitissue[this.state.id].author_association}</p>
               </div>
             </div>
-          </table>
-        )
-      })}
     </div>
       );
     };
